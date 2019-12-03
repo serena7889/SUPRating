@@ -17,7 +17,7 @@ struct BusinessRow: View {
             Text(business.title)
                 .fontWeight(.semibold)
             Spacer()
-            Text(String(format: "%.1f", arguments: [business.rating]))
+            Text("\(business.rating)")
                 .foregroundColor(DataService.instance.getColor(forRating: business.rating))
         }
     }
