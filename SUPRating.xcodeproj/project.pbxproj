@@ -19,6 +19,7 @@
 		43513BE523931CA1000C5160 /* Business.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43513BE423931CA1000C5160 /* Business.swift */; };
 		43513BE92395C422000C5160 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43513BE82395C422000C5160 /* MapView.swift */; };
 		43513BEB2395C431000C5160 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43513BEA2395C431000C5160 /* ListView.swift */; };
+		43ED81412396C54600C23462 /* RatingCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43ED81402396C54600C23462 /* RatingCard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		43513BE423931CA1000C5160 /* Business.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Business.swift; sourceTree = "<group>"; };
 		43513BE82395C422000C5160 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		43513BEA2395C431000C5160 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
+		43ED81402396C54600C23462 /* RatingCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingCard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +54,7 @@
 		4323BD832395F68700A99577 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				4323BD7F2395D1B900A99577 /* DataService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -76,7 +79,6 @@
 			isa = PBXGroup;
 			children = (
 				4323BD832395F68700A99577 /* Services */,
-				4323BD7F2395D1B900A99577 /* DataService.swift */,
 				43513BE723931CD7000C5160 /* Views */,
 				43513BE623931CC9000C5160 /* Models */,
 				43513BD023931C2C000C5160 /* AppDelegate.swift */,
@@ -113,6 +115,7 @@
 				43513BEA2395C431000C5160 /* ListView.swift */,
 				4323BD812395EDF300A99577 /* BusinessDetailView.swift */,
 				4323BD8423966B9000A99577 /* BusinessRow.swift */,
+				43ED81402396C54600C23462 /* RatingCard.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -192,6 +195,7 @@
 				4323BD802395D1B900A99577 /* DataService.swift in Sources */,
 				43513BE523931CA1000C5160 /* Business.swift in Sources */,
 				43513BEB2395C431000C5160 /* ListView.swift in Sources */,
+				43ED81412396C54600C23462 /* RatingCard.swift in Sources */,
 				43513BE92395C422000C5160 /* MapView.swift in Sources */,
 				4323BD8523966B9000A99577 /* BusinessRow.swift in Sources */,
 				4323BD822395EDF300A99577 /* BusinessDetailView.swift in Sources */,

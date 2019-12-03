@@ -20,13 +20,12 @@ struct ContentView: View {
     let edgeInsets = EdgeInsets(top: 5, leading: 12, bottom: 5, trailing: 12)
     
     var body: some View {
-        
         NavigationView {
             VStack {
-                
+
                 TextField("Search", text: $term)
                     .padding(edgeInsets)
-                
+
                 Picker(selection: $minRating, label: Text("Filter by rating")) {
                     Text("Any").tag(0)
                     Text("> 20%").tag(20)
@@ -35,25 +34,26 @@ struct ContentView: View {
                     Text("> 80%").tag(80)
                 }.pickerStyle(SegmentedPickerStyle())
                     .padding(edgeInsets)
-                
+
                 Picker(selection: $viewSelected, label: Text("View as:")) {
                     ForEach(0..<viewName.count) {
                         Text(self.viewName[$0]).tag($0)
                     }
                 }.pickerStyle(SegmentedPickerStyle())
                     .padding(edgeInsets)
-                
+
                 if viewSelected == 0 {
                     ListView(businesses: DataService.instance.filterBusinesses(byTerm: term, andRating: minRating))
                 } else {
-                    MapView(businesses: DataService.instance.filterBusinesses(byTerm: term, andRating: minRating))
+                    MapView(businesses: DataService.instance.filterBusinesses(byTerm: term, andRating: minRating), businessDetail: false)
                 }
             }
-            .navigationBarTitle("SUP Rating")
+            .navigationBarTitle("whatSUP")
         }
         
     }
 }
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

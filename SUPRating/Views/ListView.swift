@@ -14,7 +14,6 @@ struct ListView: View {
     
     var body: some View {
         VStack {
-            
             List {
                 ForEach(businesses) { business in
                     NavigationLink(destination: BusinessDetailView(business: business)) {

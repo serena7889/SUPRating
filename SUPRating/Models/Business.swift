@@ -14,7 +14,7 @@ struct Business: Identifiable {
     let id = UUID()
     var title: String
     var subtitle: String
-    var rating: Int
+    var ratings: [Int]
     var latitude: Double
     var longitude: Double
 }
