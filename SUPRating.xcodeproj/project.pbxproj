@@ -7,15 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4323BD802395D1B900A99577 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4323BD7F2395D1B900A99577 /* DataService.swift */; };
+		4323BD822395EDF300A99577 /* BusinessDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4323BD812395EDF300A99577 /* BusinessDetailView.swift */; };
+		4323BD8523966B9000A99577 /* BusinessRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4323BD8423966B9000A99577 /* BusinessRow.swift */; };
 		43513BD123931C2C000C5160 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43513BD023931C2C000C5160 /* AppDelegate.swift */; };
 		43513BD323931C2C000C5160 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43513BD223931C2C000C5160 /* SceneDelegate.swift */; };
 		43513BD523931C2C000C5160 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43513BD423931C2C000C5160 /* ContentView.swift */; };
 		43513BD723931C2E000C5160 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43513BD623931C2E000C5160 /* Assets.xcassets */; };
 		43513BDA23931C2E000C5160 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43513BD923931C2E000C5160 /* Preview Assets.xcassets */; };
 		43513BDD23931C2E000C5160 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43513BDB23931C2E000C5160 /* LaunchScreen.storyboard */; };
+		43513BE523931CA1000C5160 /* Business.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43513BE423931CA1000C5160 /* Business.swift */; };
+		43513BE92395C422000C5160 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43513BE82395C422000C5160 /* MapView.swift */; };
+		43513BEB2395C431000C5160 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43513BEA2395C431000C5160 /* ListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4323BD7F2395D1B900A99577 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		4323BD812395EDF300A99577 /* BusinessDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessDetailView.swift; sourceTree = "<group>"; };
+		4323BD8423966B9000A99577 /* BusinessRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessRow.swift; sourceTree = "<group>"; };
 		43513BCD23931C2C000C5160 /* SUPRating.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SUPRating.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43513BD023931C2C000C5160 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		43513BD223931C2C000C5160 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +33,9 @@
 		43513BD923931C2E000C5160 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		43513BDC23931C2E000C5160 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		43513BDE23931C2E000C5160 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		43513BE423931CA1000C5160 /* Business.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Business.swift; sourceTree = "<group>"; };
+		43513BE82395C422000C5160 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		43513BEA2395C431000C5160 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +49,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4323BD832395F68700A99577 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		43513BC423931C2C000C5160 = {
 			isa = PBXGroup;
 			children = (
@@ -56,9 +75,12 @@
 		43513BCF23931C2C000C5160 /* SUPRating */ = {
 			isa = PBXGroup;
 			children = (
+				4323BD832395F68700A99577 /* Services */,
+				4323BD7F2395D1B900A99577 /* DataService.swift */,
+				43513BE723931CD7000C5160 /* Views */,
+				43513BE623931CC9000C5160 /* Models */,
 				43513BD023931C2C000C5160 /* AppDelegate.swift */,
 				43513BD223931C2C000C5160 /* SceneDelegate.swift */,
-				43513BD423931C2C000C5160 /* ContentView.swift */,
 				43513BD623931C2E000C5160 /* Assets.xcassets */,
 				43513BDB23931C2E000C5160 /* LaunchScreen.storyboard */,
 				43513BDE23931C2E000C5160 /* Info.plist */,
@@ -73,6 +95,26 @@
 				43513BD923931C2E000C5160 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		43513BE623931CC9000C5160 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				43513BE423931CA1000C5160 /* Business.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		43513BE723931CD7000C5160 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				43513BD423931C2C000C5160 /* ContentView.swift */,
+				43513BE82395C422000C5160 /* MapView.swift */,
+				43513BEA2395C431000C5160 /* ListView.swift */,
+				4323BD812395EDF300A99577 /* BusinessDetailView.swift */,
+				4323BD8423966B9000A99577 /* BusinessRow.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -147,6 +189,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				43513BD123931C2C000C5160 /* AppDelegate.swift in Sources */,
+				4323BD802395D1B900A99577 /* DataService.swift in Sources */,
+				43513BE523931CA1000C5160 /* Business.swift in Sources */,
+				43513BEB2395C431000C5160 /* ListView.swift in Sources */,
+				43513BE92395C422000C5160 /* MapView.swift in Sources */,
+				4323BD8523966B9000A99577 /* BusinessRow.swift in Sources */,
+				4323BD822395EDF300A99577 /* BusinessDetailView.swift in Sources */,
 				43513BD323931C2C000C5160 /* SceneDelegate.swift in Sources */,
 				43513BD523931C2C000C5160 /* ContentView.swift in Sources */,
 			);
