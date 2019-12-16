@@ -9,64 +9,106 @@
 import SwiftUI
 import MapKit
 
-struct MapView: View {
+struct Map: View {
     
     var businesses: [Business]!
     var businessDetail: Bool!
     
     var body: some View {
-        Map(businesses: businesses, businessDetail: businessDetail)
+        MapView(businesses: businesses, businessDetail: businessDetail)
     }
     
 }
 
-struct Map: UIViewRepresentable {
-    
-    var businesses: [Business]!
-    var businessDetail: Bool!
-    
-    func getAnnotation(forBusiness business: Business) -> MKPointAnnotation {
-        let annotation = MKPointAnnotation()
-        annotation.coordinate = CLLocationCoordinate2D(latitude: business.latitude, longitude: business.longitude)
-        annotation.title = business.title
-        annotation.subtitle = "\(business.ratings[0])"
-        return annotation
-    }
+//struct MapView: UIViewRepresentable {
+//
+//
+//    var businesses: [Business]!
+//    var businessDetail: Bool!
+//
+//    func getAnnotation(forBusiness business: Business) -> MKPointAnnotation {
+//        let annotation = MKPointAnnotation()
+//        annotation.coordinate = CLLocationCoordinate2D(latitude: business.latitude, longitude: business.longitude)
+//        annotation.title = business.title
+//        annotation.subtitle = "\(business.ratings[0])"
+//        return annotation
+//    }
+//
+//
+//    func makeUIView(context: Context) -> MKMapView {
+//        MKMapView(frame: .zero)
+//    }
+//
+//    func updateUIView(_ map: MKMapView, context: Context) {
+//
+//        let myLocation = CLLocationCoordinate2D(latitude: 51.456704,longitude: -2.613017)
+//
+//        let span = MKCoordinateSpan(latitudeDelta: 0.02, longitudeDelta: 0.02)
+//        var region = MKCoordinateRegion(center: myLocation, span: span)
+//
+//
+//        map.removeAnnotations(map.annotations)
+//
+//        if businessDetail {
+//            let businessLocation = CLLocationCoordinate2D(latitude: businesses[0].latitude, longitude: businesses[0].longitude)
+//            let pin = getAnnotation(forBusiness: businesses[0])
+//            region = MKCoordinateRegion(center: businessLocation, span: span)
+//            map.addAnnotation(pin)
+//        } else {
+//            for i in 0..<businesses.count {
+//                let business = businesses[i]
+//                let pin = getAnnotation(forBusiness: business)
+//                map.addAnnotation(pin)
+//            }
+//        }
+//        map.setRegion(region, animated: true)
+//    }
+//
+//
+//    func makeCoordinator() -> () {
+//        Coordinator(self)
+//    }
+//
+//    class Coordinator: NSObject, MKMapViewDelegate {
+//
+//        var parent: Map
+//
+//        init(_ parent: Map) {
+//            self.parent = parent
+//        }
+//
+//    }
+//
+//
+//}
 
 
+struct MapView: UIViewRepresentable {
     func makeUIView(context: Context) -> MKMapView {
-        MKMapView(frame: .zero)
+        let mapView = MKMapView()
+        mapView.delegate = context.coordinator
+        return mapView
     }
 
-    func updateUIView(_ map: MKMapView, context: Context) {
+    func updateUIView(_ view: MKMapView, context: Context) {
 
-        let myLocation = CLLocationCoordinate2D(latitude: 51.456704,longitude: -2.613017)
+    }
 
-        let span = MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
-        var region = MKCoordinateRegion(center: myLocation, span: span)
-        
-        
-        map.removeAnnotations(map.annotations)
+    func makeCoordinator() -> Coordinator {
+        Coordinator(self)
+    }
 
-        if businessDetail {
-            let businessLocation = CLLocationCoordinate2D(latitude: businesses[0].latitude, longitude: businesses[0].longitude)
-            let pin = getAnnotation(forBusiness: businesses[0])
-            region = MKCoordinateRegion(center: businessLocation, span: span)
-            map.addAnnotation(pin)
-        } else {
-            for i in 0..<businesses.count {
-                let business = businesses[i]
-                let pin = getAnnotation(forBusiness: business)
-                map.addAnnotation(pin)
-            }
+    class Coordinator: NSObject, MKMapViewDelegate {
+        var parent: MapView
+
+        init(_ parent: MapView) {
+            self.parent = parent
         }
-        map.setRegion(region, animated: true)
     }
-
 }
 
 struct MapView_Previews: PreviewProvider {
     static var previews: some View {
-        MapView()
+        Map()
     }
 }

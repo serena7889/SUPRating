@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		430B48E023A2FE3D00C5C1F6 /* Logo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430B48DF23A2FE3D00C5C1F6 /* Logo.swift */; };
+		431272DA239E996100928AF5 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431272D9239E996100928AF5 /* Map.swift */; };
+		431BA17223A2E0E600BF5F89 /* RadialRating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431BA17123A2E0E600BF5F89 /* RadialRating.swift */; };
+		431BA17423A2E1B800BF5F89 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431BA17323A2E1B800BF5F89 /* Constants.swift */; };
 		4323BD802395D1B900A99577 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4323BD7F2395D1B900A99577 /* DataService.swift */; };
 		4323BD822395EDF300A99577 /* BusinessDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4323BD812395EDF300A99577 /* BusinessDetailView.swift */; };
 		4323BD8523966B9000A99577 /* BusinessRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4323BD8423966B9000A99577 /* BusinessRow.swift */; };
@@ -17,12 +21,15 @@
 		43513BDA23931C2E000C5160 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43513BD923931C2E000C5160 /* Preview Assets.xcassets */; };
 		43513BDD23931C2E000C5160 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43513BDB23931C2E000C5160 /* LaunchScreen.storyboard */; };
 		43513BE523931CA1000C5160 /* Business.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43513BE423931CA1000C5160 /* Business.swift */; };
-		43513BE92395C422000C5160 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43513BE82395C422000C5160 /* MapView.swift */; };
 		43513BEB2395C431000C5160 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43513BEA2395C431000C5160 /* ListView.swift */; };
 		43ED81412396C54600C23462 /* RatingCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43ED81402396C54600C23462 /* RatingCard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		430B48DF23A2FE3D00C5C1F6 /* Logo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logo.swift; sourceTree = "<group>"; };
+		431272D9239E996100928AF5 /* Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
+		431BA17123A2E0E600BF5F89 /* RadialRating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadialRating.swift; sourceTree = "<group>"; };
+		431BA17323A2E1B800BF5F89 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		4323BD7F2395D1B900A99577 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		4323BD812395EDF300A99577 /* BusinessDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessDetailView.swift; sourceTree = "<group>"; };
 		4323BD8423966B9000A99577 /* BusinessRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessRow.swift; sourceTree = "<group>"; };
@@ -35,7 +42,6 @@
 		43513BDC23931C2E000C5160 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		43513BDE23931C2E000C5160 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		43513BE423931CA1000C5160 /* Business.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Business.swift; sourceTree = "<group>"; };
-		43513BE82395C422000C5160 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		43513BEA2395C431000C5160 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		43ED81402396C54600C23462 /* RatingCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingCard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -55,6 +61,7 @@
 			isa = PBXGroup;
 			children = (
 				4323BD7F2395D1B900A99577 /* DataService.swift */,
+				431BA17323A2E1B800BF5F89 /* Constants.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -111,11 +118,13 @@
 			isa = PBXGroup;
 			children = (
 				43513BD423931C2C000C5160 /* ContentView.swift */,
-				43513BE82395C422000C5160 /* MapView.swift */,
 				43513BEA2395C431000C5160 /* ListView.swift */,
 				4323BD812395EDF300A99577 /* BusinessDetailView.swift */,
 				4323BD8423966B9000A99577 /* BusinessRow.swift */,
 				43ED81402396C54600C23462 /* RatingCard.swift */,
+				431272D9239E996100928AF5 /* Map.swift */,
+				431BA17123A2E0E600BF5F89 /* RadialRating.swift */,
+				430B48DF23A2FE3D00C5C1F6 /* Logo.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -191,16 +200,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				431272DA239E996100928AF5 /* Map.swift in Sources */,
+				430B48E023A2FE3D00C5C1F6 /* Logo.swift in Sources */,
 				43513BD123931C2C000C5160 /* AppDelegate.swift in Sources */,
 				4323BD802395D1B900A99577 /* DataService.swift in Sources */,
 				43513BE523931CA1000C5160 /* Business.swift in Sources */,
+				431BA17223A2E0E600BF5F89 /* RadialRating.swift in Sources */,
 				43513BEB2395C431000C5160 /* ListView.swift in Sources */,
 				43ED81412396C54600C23462 /* RatingCard.swift in Sources */,
-				43513BE92395C422000C5160 /* MapView.swift in Sources */,
 				4323BD8523966B9000A99577 /* BusinessRow.swift in Sources */,
 				4323BD822395EDF300A99577 /* BusinessDetailView.swift in Sources */,
 				43513BD323931C2C000C5160 /* SceneDelegate.swift in Sources */,
 				43513BD523931C2C000C5160 /* ContentView.swift in Sources */,
+				431BA17423A2E1B800BF5F89 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,7 +360,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.serenaLambert.SUPRating;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -368,7 +380,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.serenaLambert.SUPRating;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

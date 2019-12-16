@@ -10,17 +10,26 @@ import SwiftUI
 
 struct ListView: View {
     
+    @Environment(\.presentationMode) var presentationMode
+    @State private var selectedBusiness = DataService.instance.getBusinesses()[0]
+    @State private var showDetail = false
+    
     var businesses: [Business]!
     
     var body: some View {
-        VStack {
-            List {
+        ScrollView {
+            VStack {
                 ForEach(businesses) { business in
-                    NavigationLink(destination: BusinessDetailView(business: business)) {
+                    Button(action: {
+                        self.selectedBusiness = business
+                        self.showDetail = true
+                        }) {
                         BusinessRow(business: business)
                     }
                 }
             }
+        }.sheet(isPresented: $showDetail) {
+            BusinessDetailView(business: self.selectedBusiness)
         }
     }
 }

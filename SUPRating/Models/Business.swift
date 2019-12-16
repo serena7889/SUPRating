@@ -12,9 +12,10 @@ import MapKit
 
 struct Business: Identifiable {
     let id = UUID()
-    var title: String
-    var subtitle: String
-    var ratings: [Int]
-    var latitude: Double
-    var longitude: Double
+    let title: String
+    let subtitle: String
+    let type: BusinessType
+    let ratings: [Int]
+    let latitude: Double
+    let longitude: Double
 }

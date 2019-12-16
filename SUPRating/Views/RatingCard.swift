@@ -10,31 +10,22 @@ import SwiftUI
 
 struct RatingCard: View {
     
-    let title: String!
-    let score: Int!
+    let title: String
+    let score: Int
     
     var body: some View {
         VStack {
-            Text("\(score)")
-                .font(.largeTitle)
-                .fontWeight(.bold)
-                .foregroundColor(DataService.instance.getColor(forRating: score))
+            RadialRating(value: score, textSize: CGFloat(50), size: CGFloat(100), lineWidth: CGFloat(10))
             Text(title)
                 .font(.headline)
                 .fontWeight(.bold)
-                .foregroundColor(DataService.instance.getColor(forRating: score))
-        }
-        .frame(width: 150)
-        .padding()
-        .overlay(
-            RoundedRectangle(cornerRadius: 10)
-                .stroke(DataService.instance.getColor(forRating: score), lineWidth: 5)
-        )
+                .foregroundColor(.white)
+        }.padding()
     }
 }
 
 struct RatingCard_Previews: PreviewProvider {
     static var previews: some View {
-        RatingCard(title: "Overall", score: 67)
+        RatingCard(title: "Overall", score: 67).background(DARK_BLUE)
     }
 }

@@ -11,41 +11,52 @@ import MapKit
 
 struct BusinessDetailView: View {
     
+    @Environment(\.presentationMode) var presentationMode
     @State private var ratingIndex = 0
     
-    var business: Business!
-    let ratingTitles = ["Overall", "Packaging", "Labelling", "Transparency", "Manufacturing"]
+    var business: Business
     
     var body: some View {
         VStack {
-            
-            MapView(businesses: [business], businessDetail: true)
-                .frame(height: 300)
+            ZStack(alignment: .topLeading) {
+                Map(businesses: [business], businessDetail: true)
+                    .frame(height: 300)
+                Button(action: {
+                    self.presentationMode.wrappedValue.dismiss()
+                }) {
+                    Image(systemName: "xmark")
+                        .font(.system(size: 30, weight: .semibold))
+                        .foregroundColor(DARK_BLUE)
+                        .padding(40)
+                }
+            }
             Spacer()
             Text(business.title)
                 .font(.largeTitle)
                 .fontWeight(.bold)
+                .foregroundColor(.white)
             Text(business.subtitle)
                 .font(.title)
+                .foregroundColor(.white)
             Spacer()
             HStack {
                 Spacer()
                 Button(action: {
-                    self.ratingIndex = (self.ratingIndex - 1) % self.ratingTitles.count
+                    self.ratingIndex = (self.ratingIndex - 1) % DataService.instance.getRatingTitles().count
                 }) {
                     Image(systemName: "chevron.left")
                         .font(.system(size: 40))
-                    .foregroundColor(Color.gray)
+                    .foregroundColor(Color.white)
                 }
                 Spacer()
-                RatingCard(title: self.ratingTitles[ratingIndex], score: self.business.ratings[ratingIndex])
+                RatingCard(title: DataService.instance.getRatingTitles()[ratingIndex], score: self.business.ratings[ratingIndex])
                 Spacer()
                 Button(action: {
-                    self.ratingIndex = (self.ratingIndex + 1) % self.ratingTitles.count
+                    self.ratingIndex = (self.ratingIndex + 1) % DataService.instance.getRatingTitles().count
                 }) {
                     Image(systemName: "chevron.right")
                         .font(.system(size: 40))
-                        .foregroundColor(Color.gray)
+                        .foregroundColor(Color.white)
                 }
                 Spacer()
             }
@@ -55,14 +66,16 @@ struct BusinessDetailView: View {
             }) {
                 Text("Get directions")
                     .font(.headline)
+                    .fontWeight(.bold)
                     .padding()
-                    .foregroundColor(Color.white)
-                    .background(Color.gray)
-                    .clipShape(RoundedRectangle(cornerRadius: 10))
+                    .foregroundColor(DARK_BLUE)
+                    .background(Color.white)
+                    .clipShape(RoundedRectangle(cornerRadius: 20))
             }
             Spacer()
         }
-        .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.top/*@END_MENU_TOKEN@*/)
+        .background(DARK_BLUE)
+        .edgesIgnoringSafeArea(.all)
     }
     
     func getDirections(business: Business) {
@@ -72,6 +85,7 @@ struct BusinessDetailView: View {
         let launchOptions = [MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeWalking]
         mapItem.openInMaps(launchOptions: launchOptions)
     }
+    
 }
 
 struct BusinessDetailView_Previews: PreviewProvider {
